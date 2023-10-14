@@ -1,25 +1,18 @@
+name: CI -> Deploy to My website
 on:
   push:
-    branches:
-      - main
-
+    branches: [ master, Development ]
 jobs:
-  web-deploy:
-    name: Deploy
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Get latest code
-        uses: actions/checkout@v3
-
-      - name: Remove .github folder
-        run: rm -rf .github
-
-      - name: Sync files
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - uses: actions/checkout@v2
+      # Here is the deployment action
+      - name: Upload from public_html via FTP
+        uses: airvzxf/ftp-deployment-action@latest
         with:
           server: ftp.alunossistoledo.kinghost.net
           username: alunossistoledo
           password: Si123456
-          server-dir: /www/gustavo/
-          log-level: verbose
-          security: loose
+          delete: "false"
+          remote_dir: /www/gustavo
