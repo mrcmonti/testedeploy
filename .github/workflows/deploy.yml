@@ -12,7 +12,7 @@ jobs:
         uses: airvzxf/ftp-deployment-action@latest
         with:
           server: ftp.alunossistoledo.kinghost.net
-          username: alunossistoledo
+          user: alunossistoledo
           password: Si123456
           delete: "false"
           remote_dir: /www/gustavo
