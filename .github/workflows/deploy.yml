@@ -17,4 +17,4 @@ jobs:
           server: ftp.alunossistoledo.kinghost.net
           username: alunossistoledo
           password: Si123456
-          server-dir: gustavo/
+          server-dir: www/gustavo/
