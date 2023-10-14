@@ -1,5 +1,5 @@
 on:
-  push:
+  workflow_dispatch:
     branches:
       - main
 name: 🚀 Deploy website on push
@@ -17,4 +17,4 @@ jobs:
           server: ftp.alunossistoledo.kinghost.net
           username: alunossistoledo
           password: Si123456
-          server-dir: www/gustavo/
+          server-dir: gustavo/
